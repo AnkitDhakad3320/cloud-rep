@@ -1,11 +1,11 @@
 
-const TodoList = ()=>{
+const TodoList = (props)=>{
     return (
         <li className="todoListItem">
-        <input type="checkbox" className="checkbox"/>
-        <p>Eat</p>
-        <button className="optionButton">...</button>
-        </li>    
+        {props.completed ?<>✓</> : <input type="checkbox" className="checkbox"/>}
+        <p>{props.text}</p>
+        <button className="optionButton">...✗</button>
+        </li>
     );
 };
 export default TodoList;
