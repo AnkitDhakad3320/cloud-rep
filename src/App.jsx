@@ -1,37 +1,22 @@
-import { useEffect
+import { useContext
   ,useState
  } from 'react';
 import './App.css';
-import Timer from './components/Timer';
-// import Todo from './components/todo';
-// import UuseEffectComponent from './components/UuseEffectComponent';
-// import MyComponent from './components/Mycomp';
-// import CounterComponent from "./CounterComponent";
+import Counter from './components/Counter'
+import { CounterContext } from './context/Counter';
 
 
 function App() {
-
-  // const [isVisible , setIsVisible] = useState(true);
-  useEffect(()=>{
-      console.log("component is mounting....");
-  },[]);
+const counterState = useContext(CounterContext);
 
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Todoie App</h1>
-        {/* <Todo todo="Todo"/> */}
-        {/* <CounterComponent/> */}
-        {/* <UuseEffectComponent /> */}
-        
-        {/* {
-          isVisible ? <MyComponent /> : <></>
-        }
-        <button onClick={ ()=>{setIsVisible(!isVisible)}}>
-          Hide/Unhide
-        </button> */}
-        {/* <Timer/> */}
-      </header>
+      <h1> Context Api</h1>
+      <p>Count is {counterState.count}</p>
+      <Counter/>
+      <Counter/>
+      <Counter/>
+      <Counter/>
     </div>
   );
 }
