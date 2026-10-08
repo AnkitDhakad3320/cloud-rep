@@ -1,16 +1,17 @@
-import Item from './components/Item';
-import Cart from './components/Cart';
+import { useEffect , useState} from 'react';
+import { getPosts } from './Api';
+import { PostCard } from './components/PostCard';
 import './App.css';
 
 function App() {
-
+  const [data , setData] = useState([]);
+ useEffect(()=>{
+  getPosts().then((posts)=>setData(posts))
+ },[]);
 
   return (
     <div className="App">
-     <Item name='MacBook' price= {90000} />
-     <Item name='Pendrive' price={3000} />
-     <Item name='Iphone' price={45000}/>
-     <Cart/>
+    {data ? data.map(e=><PostCard title={e.title} body={e.body} />) : <p>No Data Available</p>}
     </div>
   );
 }
