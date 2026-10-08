@@ -10,13 +10,18 @@ function App() {
  useEffect(()=>{
   getPosts().then((posts)=>setData(posts));
  },[]);
+
  useEffect(()=>{
   getUsers().then((user)=>setUsers(user?.results[0]));
  },[])
+ const refresh = () =>{
+  getUsers().then((user)=>setUsers(user?.results[0]));
+ }
 
   return (
     <div className="App">
-     {users? <UserCard data={users}/>: <p>No Data Found </p>}
+     {users && <UserCard data={users}/>}
+     <button onClick={refresh}>Refresh</button>
     {data ? data.map(e=><PostCard title={e?.title} body={e?.body} />) : <p>No Data Available</p>}
     </div>
   );
