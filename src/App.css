@@ -1,66 +1,19 @@
-.App {
+/* .App {
   text-align: center;
+} */
+.board-container{
+  margin: 50px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #c0c1c2;
-  min-height: 100vh;
+.board-row {
   display: flex;
-  flex-direction: column;
+  justify-content: space-center;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: rgb(7, 7, 7)
 }
-
-.todoBlock{
-  width: 30%;
-  padding:0px 34px;
-  display:flex;
-  flex-direction: column;
-  align-items: flex-start;
-  /* border: 1px solid black; */
-  border-radius: 10%;
-  background-color: #f0f0f0;
-}
-
-.todoListItem {
-  width: 100%;
-  padding: 0px;
+.square {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  user-select: none;
-}
-.addButton{
+  justify-content:center;
   width: 100%;
-  padding: 5px 10px ;
-  background: #e4d5d5;
-  border-radius: 10px;
-  margin: 10px;
-  border: none;
-  font-weight: bold;
-  cursor: pointer;
-}
- .addButton:hover{
- scale: 1.15;
-}
-.checkbox{
-  cursor: pointer;
-}
-.optionButton{
-  cursor:pointer; 
-  border:none;
-  background-color: #f0f0f0;
-  padding: 10px;
-  border-radius: 10px;
-}
-.optionButton:hover{
-  background-color: #c7c8ca;
-  scale: 1.15;
+  height: 150px;
+  border: 1px solid black;
 }
